@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Products
   description: This is the OpenAPI for the Union Fashion product catalog.
-  version: '1.0'
+  version: '1.0.1'
 servers:
   - url: '{{baseUrl}}'
 security:
@@ -146,6 +146,8 @@ paths:
         - api_key: []
       responses:
         '204':
+          description: Product deleted.
+        '500':
           description: Product deleted.
       deprecated: false
 components:
