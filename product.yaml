@@ -5,6 +5,8 @@ info:
   version: '1.0'
 servers:
   - url: '{{baseUrl}}'
+security:
+  - api_key: []
 paths:
   /productss:
     post:
@@ -12,6 +14,8 @@ paths:
       responses:
         '201':
           description: Successful creation of product.        
+        '500':
+          description: Internal Server Error    
   /products:
     post:
       summary: Add Product
@@ -32,8 +36,6 @@ paths:
               gender: m
               unitPrice: 49.99
               unitSalePrice: 29.99
-      security:
-        - api_key: []
       responses:
         '201':
           description: Successful creation of product.
@@ -43,6 +45,8 @@ paths:
                 $ref: '#/components/schemas/Product'
               example:
                 status: success
+        '500':
+          description: Internal Server Error    
       deprecated: false
     get:
       summary: Get Products
@@ -69,6 +73,8 @@ paths:
                 $ref: '#/components/schemas/Products'
               example:
                 status: success
+        '500':
+          description: Internal Server Error    
       deprecated: false
   '/products/{productId}':
     get:
@@ -94,6 +100,8 @@ paths:
                 $ref: '#/components/schemas/Product'
               example:
                 status: success
+        '500':
+          description: Internal Server Error    
       deprecated: false
       security:
         - api_key: []
@@ -125,6 +133,8 @@ paths:
       responses:
         '204':
           description: Successfully updated.
+        '500':
+          description: Internal Server Error    
       deprecated: false
     delete:
       tags:
