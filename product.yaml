@@ -8,14 +8,6 @@ servers:
 security:
   - api_key: []
 paths:
-  /productss:
-    post:
-      summary: Add Product  
-      responses:
-        '201':
-          description: Successful creation of product.        
-        '500':
-          description: Internal Server Error    
   /products:
     post:
       summary: Add Product
